@@ -1,0 +1,1554 @@
+{
+  "type": "box",
+  "layout": "column",
+  "id": 0,
+  "contents": [
+    {
+      "type": "box",
+      "id": 1,
+      "contents": [
+        {
+          "type": "text",
+          "id": 2,
+          "text": "【医療】訪問看護記録I",
+          "fontSize": "1.25em",
+          "fontWeight": "normal"
+        }
+      ],
+      "marginBottom": "5px"
+    },
+    {
+      "type": "table",
+      "id": 3,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 4,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 5,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 6,
+                  "text": "利用者氏名",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 7,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 8,
+                  "bindingKey": "patientName",
+                  "label": ""
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 9,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 10,
+                  "text": "訪問者",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 11,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 12,
+                  "label": "",
+                  "bindingKey": "visitorName",
+                  "marginTop": ""
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 13,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 14,
+                  "text": "同行者",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 15,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 16,
+                  "marginTop": "",
+                  "label": "",
+                  "bindingKey": "partnerName"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 17,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 18,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 19,
+                  "text": "訪問日時",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 20,
+              "rowspan": "",
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 21,
+                  "contents": [
+                    {
+                      "type": "datePicker",
+                      "id": 22,
+                      "grow": 0,
+                      "dense": true,
+                      "marginLeft": "20px",
+                      "marginRight": "8px",
+                      "label": "日付選択",
+                      "bindingKey": "visitDate",
+                      "width": "150px",
+                      "style": "outlined",
+                      "marginTop": "10px",
+                      "marginBottom": "10px"
+                    },
+                    {
+                      "type": "timeIntervalSelect",
+                      "id": 23,
+                      "style": "outlined",
+                      "dense": true,
+                      "width": "150px",
+                      "grow": 0,
+                      "time": [
+                        "時間選択",
+                        "00:00",
+                        "00:30",
+                        "01:00",
+                        "01:30",
+                        "02:00",
+                        "02:30",
+                        "03:00",
+                        "03:30",
+                        "04:00",
+                        "04:30",
+                        "05:00",
+                        "05:30",
+                        "06:00",
+                        "06:30",
+                        "07:00",
+                        "07:30",
+                        "08:00",
+                        "08:30",
+                        "09:00",
+                        "09:30",
+                        "10:00",
+                        "10:30",
+                        "11:00",
+                        "11:30",
+                        "12:00",
+                        "12:30",
+                        "13:00",
+                        "13:30",
+                        "14:00",
+                        "14:30",
+                        "15:00",
+                        "15:30",
+                        "16:00",
+                        "16:30",
+                        "17:00",
+                        "17:30",
+                        "18:00",
+                        "18:30",
+                        "19:00",
+                        "19:30",
+                        "20:00",
+                        "20:30",
+                        "21:00",
+                        "21:30",
+                        "22:00",
+                        "22:30",
+                        "23:00",
+                        "23:30"
+                      ],
+                      "bindingKey": "visitTimeInterval",
+                      "shrink": 1
+                    }
+                  ],
+                  "layout": "row",
+                  "flexShrink": 0,
+                  "wrap": false,
+                  "flexGrow": 0,
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "id": 24,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 25,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 26,
+              "rowspan": "4",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 27,
+                  "text": "バイタル サイン",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 28,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 29,
+                  "text": "体温",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 30,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 31,
+                  "text": "脈拍",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 32,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 33,
+                  "text": "最高/最低血圧",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 34,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 35,
+                  "text": "呼吸",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 36,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 37,
+                  "text": "SPO2",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 38,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 39,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 40,
+                  "layout": "",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 41,
+                      "bindingKey": "bodyTemperature",
+                      "label": "",
+                      "grow": 0,
+                      "shrink": 1,
+                      "flexBasis": "",
+                      "width": ""
+                    },
+                    {
+                      "type": "text",
+                      "id": 42,
+                      "grow": 0,
+                      "text": " °C",
+                      "shrink": 0
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "wrap": false,
+                  "flexBasis": "",
+                  "justifyContent": "justify-center",
+                  "marginTop": "",
+                  "marginLeft": "",
+                  "marginBottom": "",
+                  "marginRight": ""
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 43,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 44,
+                  "layout": "",
+                  "flexGrow": 0,
+                  "justifyContent": "justify-center",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 45,
+                      "label": "",
+                      "bindingKey": "pulseInput",
+                      "grow": 0,
+                      "width": "100px",
+                      "shrink": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": 46,
+                      "grow": 0,
+                      "text": " 回/分",
+                      "shrink": 0
+                    }
+                  ],
+                  "marginTop": "",
+                  "marginLeft": "",
+                  "marginBottom": "",
+                  "marginRight": "",
+                  "wrap": false,
+                  "flexShrink": 1
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 47,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 48,
+                  "layout": "",
+                  "flexGrow": 0,
+                  "justifyContent": "justify-center",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 49,
+                      "label": "",
+                      "bindingKey": "bloodPressure",
+                      "grow": 0,
+                      "shrink": 1,
+                      "width": "100px"
+                    },
+                    {
+                      "type": "text",
+                      "id": 50,
+                      "grow": 0,
+                      "text": "mmHg"
+                    }
+                  ],
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "marginRight": "10px",
+                  "flexShrink": 1,
+                  "wrap": false
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 51,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 52,
+                  "layout": "",
+                  "flexGrow": 0,
+                  "justifyContent": "justify-center",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 53,
+                      "bindingKey": "breathe",
+                      "label": "",
+                      "grow": 0,
+                      "width": "100px",
+                      "shrink": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": 54,
+                      "grow": 0,
+                      "text": "回/分",
+                      "shrink": 0
+                    }
+                  ],
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "marginRight": "10px",
+                  "flexShrink": 0
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 55,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 56,
+                  "layout": "",
+                  "flexGrow": 0,
+                  "justifyContent": "justify-center",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 57,
+                      "label": "",
+                      "bindingKey": "spO2Input",
+                      "grow": 0,
+                      "width": "100px",
+                      "shrink": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": 58,
+                      "grow": 0,
+                      "text": "%"
+                    }
+                  ],
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "marginRight": "10px",
+                  "flexShrink": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 59,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 60,
+              "colspan": "",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 61,
+                  "text": "食事",
+                  "textAlign": "center",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 62,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 63,
+                  "text": "排泄",
+                  "textAlign": "center",
+                  "backgroundColor": "",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 64,
+              "colspan": "3"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 65,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 66,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 67,
+                  "bindingKey": "eatInput",
+                  "label": ""
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 68,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 69,
+                  "label": "",
+                  "bindingKey": "excretion"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 70,
+              "colspan": "3"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 71,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 72,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 73,
+                  "text": "影像",
+                  "color": "rgb(2, 177, 231)"
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "6"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 74,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 75,
+              "contents": [
+                {
+                  "type": "imageUploader",
+                  "id": 76,
+                  "bindingKey": "imageUploader",
+                  "title": "圖片標注",
+                  "totalNumberText": "圖片總數",
+                  "totalNumberValue": 4,
+                  "horizontalText": "橫向數",
+                  "horizontalValue": "2",
+                  "verticalText": "縱向數",
+                  "verticalValue": "2",
+                  "totalSizeWidthText": "總寬",
+                  "totalSizeWidthValue": "800",
+                  "totalSizeHeightText": "總高",
+                  "totalSizeHeightValue": "600",
+                  "contents": [
+                    {
+                      "type": "annotatePic",
+                      "position": 0,
+                      "options": [],
+                      "text": "annotatePic",
+                      "style": {},
+                      "defaultPic": "no_default",
+                      "defaultPicB64": "",
+                      "image": "",
+                      "id": 77
+                    },
+                    {
+                      "type": "annotatePic",
+                      "position": 1,
+                      "options": [],
+                      "text": "annotatePic",
+                      "defaultPic": "no_default",
+                      "defaultPicB64": "",
+                      "image": "",
+                      "id": 78
+                    },
+                    {
+                      "type": "annotatePic",
+                      "position": 2,
+                      "options": [],
+                      "text": "annotatePic",
+                      "defaultPic": "no_default",
+                      "defaultPicB64": "",
+                      "image": "",
+                      "id": 79
+                    },
+                    {
+                      "type": "annotatePic",
+                      "position": 3,
+                      "options": [],
+                      "optionValue": "1",
+                      "text": "annotatePic",
+                      "defaultPic": "no_default",
+                      "defaultPicB64": "",
+                      "image": "",
+                      "id": 80
+                    }
+                  ]
+                }
+              ],
+              "colspan": "6"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 81,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 82,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 83,
+                  "text": "病状観察、評価",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 84,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 85,
+                  "layout": "row",
+                  "wrap": false,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 86,
+                      "marginLeft": "",
+                      "bindingKey": "ROMCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 87,
+                      "text": "ROM評価",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 88,
+                      "bindingKey": "powerCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 89,
+                      "text": "筋力評価",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 90,
+                      "bindingKey": "actionCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 91,
+                      "text": "動作評価",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 92,
+                      "bindingKey": "braionFuncCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 93,
+                      "marginRight": "5px",
+                      "text": "高次脳機能検察"
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "flexBasis": "0",
+                  "marginLeft": "10px",
+                  "fillHeight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 94,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 95,
+              "colspan": "1",
+              "rowspan": "2",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 96,
+                  "text": "機能リハビリテーション",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)"
+            },
+            {
+              "type": "tcol",
+              "id": 97,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 98,
+                  "layout": "row",
+                  "flexGrow": 0,
+                  "wrap": false,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 99,
+                      "contents": [],
+                      "marginLeft": "",
+                      "bindingKey": "ROMexCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 100,
+                      "text": "ROMex",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 101,
+                      "bindingKey": "dongCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 102,
+                      "text": "モビライゼーション",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 103,
+                      "bindingKey": "strenchCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 104,
+                      "text": "ストレッチ．マッサージ",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 105,
+                      "bindingKey": "relaxCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 106,
+                      "text": "リラクゼーション",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    }
+                  ],
+                  "marginTop": "10px",
+                  "marginBottom": "10px",
+                  "marginLeft": "10px"
+                }
+              ],
+              "colspan": "5"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 107,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 108,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 109,
+                  "layout": "row",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 110,
+                      "bindingKey": "powerTrainCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 111,
+                      "text": "筋力トレーニング",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 112,
+                      "bindingKey": "overageCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 113,
+                      "text": "バランスex",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 114,
+                      "bindingKey": "feelCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 115,
+                      "text": "感覚入力",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 116,
+                      "bindingKey": "levelBrainCheckbox",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 117,
+                      "text": "高次脳機能ex",
+                      "grow": 0,
+                      "marginRight": "5px"
+                    }
+                  ],
+                  "marginTop": "10px",
+                  "marginBottom": "10px",
+                  "marginLeft": "10px"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 118,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 119,
+              "rowspan": "2",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 120,
+                  "text": "動作リハビリテーション",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 121,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 122,
+                  "layout": "row",
+                  "marginTop": "10px",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 123,
+                      "grow": 0,
+                      "bindingKey": "upActionCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 124,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "ペッド上動作ex"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 125,
+                      "grow": 0,
+                      "bindingKey": "getUpCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 126,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "起き上がりex"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 127,
+                      "grow": 0,
+                      "bindingKey": "keepSeatCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 128,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "座位保持ex"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 129,
+                      "grow": 0,
+                      "bindingKey": "standupCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 130,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "立ち上がりex"
+                    }
+                  ],
+                  "marginLeft": "10px",
+                  "marginBottom": "10px"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 131,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 132,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 133,
+                  "layout": "row",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 134,
+                      "grow": 0,
+                      "bindingKey": "standSeatCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 135,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "立位ex"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 136,
+                      "grow": 0,
+                      "bindingKey": "walkCheckBox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 137,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "步行ex"
+                    }
+                  ],
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 138,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 139,
+              "rowspan": "2",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 140,
+                  "text": "日常生活活動(ADL)訓練",
+                  "contents": [],
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 141,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 142,
+                  "layout": "row",
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 143,
+                      "grow": 0,
+                      "bindingKey": "changeClothCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 144,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "更衣動作"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 145,
+                      "grow": 0,
+                      "bindingKey": "stepCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 146,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "階段昇降"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 147,
+                      "grow": 0,
+                      "bindingKey": "houseMoveCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 148,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "屋內移動．トランスファ－"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 149,
+                      "grow": 0,
+                      "bindingKey": "eatPositionCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 150,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "食事姿勢調整"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 151,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 152,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 153,
+                  "layout": "row",
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 154,
+                      "grow": 0,
+                      "bindingKey": "outsidePraCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 155,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "外出練習．転倒防止"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 156,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 157,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 158,
+                  "text": "環境整備．調整",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 159,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 160,
+                  "layout": "row",
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 161,
+                      "grow": 0,
+                      "bindingKey": "breathe1Checkbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 162,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "呼吸リハ、排痰、心臓リハ"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 163,
+                      "grow": 0,
+                      "bindingKey": "mouthTCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 164,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "口腔、嚥下リハ"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 165,
+                      "grow": 0,
+                      "bindingKey": "mouthEnvirCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 166,
+                      "grow": 0,
+                      "marginRight": "5px",
+                      "text": "ポジショニング"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 167,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 168,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 169,
+                  "text": "義肢装具．補装具",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 170,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 171,
+                  "layout": "row",
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 172,
+                      "grow": 0,
+                      "bindingKey": "walkCarCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 173,
+                      "marginRight": "5px",
+                      "grow": 0,
+                      "text": "杖．歩行器．車いすのチェック"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 174,
+                      "grow": 0,
+                      "bindingKey": "prostheticCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 175,
+                      "marginRight": "5px",
+                      "grow": 0,
+                      "text": "義肢．装具チェック"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 176,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 177,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 178,
+                  "text": "その他",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 179,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 180,
+                  "layout": "row",
+                  "marginTop": "10px",
+                  "marginLeft": "10px",
+                  "marginBottom": "10px",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 181,
+                      "grow": 0,
+                      "bindingKey": "spiritCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 182,
+                      "marginRight": "5px",
+                      "grow": 0,
+                      "text": "精神的援助"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 183,
+                      "grow": 0,
+                      "bindingKey": "chatCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 184,
+                      "marginRight": "5px",
+                      "grow": 0,
+                      "text": "介護相談"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 185,
+                      "grow": 0,
+                      "bindingKey": "otherCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 186,
+                      "marginRight": "5px",
+                      "grow": 0,
+                      "text": "ターミナルケア"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 187,
+                      "grow": 0,
+                      "bindingKey": "familyCheckbox"
+                    },
+                    {
+                      "type": "text",
+                      "id": 188,
+                      "marginRight": "5px",
+                      "grow": 0,
+                      "text": "家族支援"
+                    }
+                  ]
+                }
+              ],
+              "colspan": "5"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 189,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 190,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 191,
+                  "text": "留意点",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 192,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 193,
+                  "bindingKey": "cautionTextarea"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 194,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 195,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 196,
+                  "text": "体重．周径など",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 197,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 198,
+                  "bindingKey": "bodyWeightRangeTextare"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 199,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 200,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 201,
+                  "text": "評価．考察",
+                  "color": "rgb(2, 177, 231)",
+                  "textAlign": "center",
+                  "grow": 0,
+                  "shrink": 0
+                }
+              ],
+              "backgroundColor": "rgb(240, 251, 255)",
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 202,
+              "colspan": "5",
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 203,
+                  "bindingKey": "commentTextarea"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

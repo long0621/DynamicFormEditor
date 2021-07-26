@@ -1,0 +1,67 @@
+{
+  "patientName": "",
+  "visitorName": null,
+  "partnerName": null,
+  "visitDate": null,
+  "visitTimeInterval": "時間選択",
+  "eatInput": null,
+  "excretion": null,
+  "ROMCheckbox": null,
+  "powerCheckbox": null,
+  "actionCheckbox": null,
+  "braionFuncCheckbox": null,
+  "ROMexCheckbox": null,
+  "dongCheckbox": null,
+  "strenchCheckbox": null,
+  "relaxCheckbox": null,
+  "powerTrainCheckbox": null,
+  "overageCheckbox": null,
+  "feelCheckbox": null,
+  "levelBrainCheckbox": null,
+  "upActionCheckbox": null,
+  "getUpCheckbox": null,
+  "keepSeatCheckbox": null,
+  "standupCheckbox": null,
+  "standSeatCheckbox": null,
+  "walkCheckBox": null,
+  "changeClothCheckbox": null,
+  "stepCheckbox": null,
+  "houseMoveCheckbox": null,
+  "eatPositionCheckbox": null,
+  "outsidePraCheckbox": null,
+  "breathe1Checkbox": null,
+  "mouthTCheckbox": null,
+  "mouthEnvirCheckbox": null,
+  "walkCarCheckbox": null,
+  "prostheticCheckbox": null,
+  "spiritCheckbox": null,
+  "chatCheckbox": null,
+  "otherCheckbox": null,
+  "familyCheckbox": null,
+  "cautionTextarea": null,
+  "bodyWeightRangeTextare": null,
+  "commentTextarea": null,
+  "imageUploader": [
+    {
+      "imageId": "",
+      "optionValue": "選択"
+    },
+    {
+      "imageId": "",
+      "optionValue": "選択"
+    },
+    {
+      "imageId": "",
+      "optionValue": "選択"
+    },
+    {
+      "imageId": "",
+      "optionValue": "選択"
+    }
+  ],
+  "bodyTemperature": null,
+  "pulseInput": null,
+  "bloodPressure": null,
+  "breathe": null,
+  "spO2Input": null
+}
