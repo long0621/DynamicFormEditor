@@ -1,6 +1,7 @@
 <template>
   <v-sheet height="100%" style="overflow: auto">
     <v-layout fill-height :style="{ width: expanded ? '160%' : '100%' }">
+      <!-- 1.左邊TFom區塊 -->
       <v-flex id="form-panel-wrapper">
         <v-layout column fill-height>
           <div class="grey lighten-3 pa-6" style="flex: 1 0 0; overflow: auto">
@@ -12,7 +13,9 @@
             >
               <!-- warning: template is mutating -->
               <!-- warning: binding data is mutating -->
-              <t-form :template="template" :binding-data="bindingData"></t-form>
+              <T-form :template="template" :binding-data="bindingData"></T-form>
+              
+              <!-- 中間欄位hover時，指向TForm的區塊,看起來是用絕對與相對來計算位置 -->
               <div
                 ref="overlay"
                 style="position: absolute; z-index: 9999; opacity: 0.4"
@@ -23,6 +26,8 @@
           </div>
         </v-layout>
       </v-flex>
+      
+      <!-- 2.中間報告元素區塊 -->
       <v-flex id="operation-panel-wrapper" style="overflow: hidden">
         <!-- warning: template is mutating -->
         <!-- warning: binding data is mutating -->
@@ -34,6 +39,8 @@
           @unhover-node="removeHighLight"
         ></operation-panel>
       </v-flex>
+      
+      <!-- 3.Focus時元素的設定區塊 -->
       <v-flex id="element-setting-panel-wrapper">
         <!-- warning: template is mutating -->
         <!-- warning: binding data is mutating -->
