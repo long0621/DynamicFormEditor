@@ -19,6 +19,16 @@
       outlined
       hide-details
     ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['Group']"
+      input-class="white"
+      type="textField"
+      label="Group"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
     
     <element-setting-input-box
       v-model="element['label']"
@@ -44,16 +54,6 @@
       hide-details
       dense
       outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['label']"
-      type="textField"
-      input-class="white"
-      label="label"
-      dense
-      outlined
-      hide-details
     ></element-setting-input-box>
 
     <element-setting-input-box

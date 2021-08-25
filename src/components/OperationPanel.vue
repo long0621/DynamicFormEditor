@@ -81,10 +81,10 @@
       </v-btn-toggle>
 
       <v-btn-toggle class="mr-1" background-color="grey" dark>
-        <toolbar-btn>
+        <toolbar-btn :disabled="(historyTemplateData.length ===0)||(currentTemplateIdx ===0)" @click="onShiftStep(-1)">
           <v-icon small>mdi-undo</v-icon>
         </toolbar-btn>
-        <toolbar-btn>
+        <toolbar-btn :disabled="(historyTemplateData.length === 0)||(currentTemplateIdx === historyTemplateData.length-1)"  @click="onShiftStep(1)">
           <v-icon small>mdi-redo</v-icon>
         </toolbar-btn>
       </v-btn-toggle>
@@ -112,6 +112,7 @@
       </v-btn-toggle>
     </v-layout>
 
+    <!-- :active="[formElementFocus]" -->
     <v-layout style="flex: 1 0 0; overflow: auto">
       <v-treeview
         ref="treeview"
@@ -122,6 +123,8 @@
         dense
         activatable
         :items="[template]"
+        :active="treeviewFocus"
+        :open="openList"
         :key="treeviewKey"
         item-children="contents"
         selected-color="primary"
@@ -164,6 +167,11 @@
         </template>
       </v-treeview>
     </v-layout>
+
+    <!-- <template>
+      <v-treeview :items="testItems" :open.sync="openIds"></v-treeview>
+    </template> -->
+    
   </v-layout>
 </template>
 
@@ -173,6 +181,7 @@ import icons from "@/iconMap.js";
 import elementsNeedBindingKey from "@/elementsNeedBindingKey.js";
 import childElementsMap from "@/childElementsMap.js";
 import camelToSentence from "@/utils/camelCaseToSentenceCase.js";
+import { mapState } from "vuex";
 
 export default {
   name: "OperationPanel",
@@ -202,9 +211,9 @@ export default {
     },
     elementsCanBeAdded() {
       if (!this.selectedNode?.type) return [];
-
       return childElementsMap[this.selectedNode.type] || [];
     },
+    ...mapState(["formElementFocus","focusMode"])
   },
 
   data() {
@@ -216,9 +225,21 @@ export default {
       copiedNodeBindingData: {},
       firstPasteAfterCut: false,
       isTreeviewAllOpen: false,
+
+      // 步驟紀錄
+			currentTemplateIdx: -1,
+			historyTemplateData: [],
+      openList:[],
+      treeviewFocus:[]
     };
   },
-
+  created(){
+    //存進歷史清單做為第一筆資料
+    if(JSON.stringify(this.template) !== '{}'){
+      this.storeTemplateDataToHistory();
+      this.currentTemplateIdx++;
+    }
+  },
   watch: {
     template() {
       // refresh treeview when template changed.
@@ -228,6 +249,17 @@ export default {
       this.removeTreeviewActive();
       this.treeviewKey++;
       this.isTreeviewAllOpen = this.$refs.treeview.openAll;
+    },
+    formElementFocus(){
+      this.openList=[];
+      const currentTemp= this.template;
+      const focusItem = this.formElementFocus;
+      const parentList = [];
+      const result = this.treeviewOpenToFocus(focusItem,currentTemp,parentList);
+
+      //for treeviewActive
+      this.treeviewFocus=[focusItem];
+      this.openList=result;
     },
   },
 
@@ -378,6 +410,7 @@ export default {
       this.copyNode();
       this.storeCopiedNodeBindingData();
       this.deleteNode();
+      this.storeTemplateDataToHistory();
       this.firstPasteAfterCut = true;
     },
     copyNode() {
@@ -398,6 +431,7 @@ export default {
         this.$set(this.selectedNode, "contents", [newNode]);
       }
 
+      this.storeTemplateDataToHistory();
       this.firstPasteAfterCut = false;
     },
     deleteBindingData(node = this.selectedNode) {
@@ -424,15 +458,93 @@ export default {
       const parentNodeContents = parentNode.contents.filter(
         (node) => node !== this.selectedNode
       );
+      
       this.deleteBindingData();
       this.removeTreeviewActive();
       this.$set(parentNode, "contents", parentNodeContents);
+      
+      this.storeTemplateDataToHistory();
+      this.currentTemplateIdx += 1;
     },
     unhoverNode(node) {
       this.$emit("unhover-node", node);
     },
+    //滑鼠移動到元素上時傳入該元素並觸發外部事件
     hoverNode(node) {
       this.$emit("hover-node", node);
+    },
+    //上一步與下一步
+    onShiftStep(step){
+      // //沒上一步或下一步時直接結束
+			if ((step < 0 && this.currentTemplateIdx < 0) || (step > 0 && this.currentTemplateIdx >= this.historyTemplateData.length - 1)) return;
+			// //上一步
+			if (step == -1) {
+				if (this.currentTemplateIdx == 0) {
+					return;
+				}
+
+        const template=this.historyTemplateData[this.currentTemplateIdx - 1].template;
+        const bindingData=this.historyTemplateData[this.currentTemplateIdx - 1].bindingData;
+        this.$store.commit(
+          "template",
+          template
+        );
+        this.$store.commit(
+          "bindingData",
+          bindingData
+        );
+				this.currentTemplateIdx -= 1;
+			}
+			//下一步
+			if (step == 1) {
+        const template=this.historyTemplateData[this.currentTemplateIdx + 1].template;
+        const bindingData=this.historyTemplateData[this.currentTemplateIdx + 1].bindingData;
+        this.$store.commit(
+          "template",
+          template
+        );
+        this.$store.commit(
+          "bindingData",
+          bindingData
+        );
+				this.currentTemplateIdx += 1;
+			}
+    },
+    storeTemplateDataToHistory(){
+      const data = {
+        template:this.deepCopy(this.template),
+        bindingData:this.deepCopy(this.bindingData)
+      }
+      this.historyTemplateData.push(data);
+    },
+    treeviewOpenToFocus(focusItem,currentTemp,parentList){
+      //第一個元素就符合，塞入parentList後返回
+      if((parentList.length ==0)&&(focusItem.id == currentTemp.id)){
+        parentList.push(currentTemp);
+        return parentList;
+      }
+
+      //元素找到,物件塞入並返回
+      if(focusItem.id == currentTemp.id){
+        parentList.push(currentTemp);
+
+        return parentList;
+      }
+
+      //沒有下一層了，直接返回null
+      if(!currentTemp.contents){
+        return null;
+      }
+
+      parentList.push(currentTemp);
+      for (let i = 0; i < currentTemp.contents.length; i++) {
+        const result = this.treeviewOpenToFocus(focusItem,currentTemp.contents[i],parentList);
+        if (result == null){
+          continue;
+        }else{
+          return result;
+        }
+      }
     },
   },
 };

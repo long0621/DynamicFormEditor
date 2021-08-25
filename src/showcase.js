@@ -1,5 +1,5 @@
-const tableTemplate = {
-  name: "table demo",
+const demo1 = {
+  name: "demo1",
   template: {
     "type": "box",
     "layout": "column",
@@ -2483,281 +2483,940 @@ const tableTemplate = {
   },
 };
 
-const diagnosisTemplate = {
-  name: "diagnosis",
-  template: {
-    type: "box",
-    layout: "vertical",
-    id: 1,
-    contents: [
+const demo2={
+  name:"demo 2",
+  template:{
+    "type": "box",
+    "id": 0,
+    "contents": [
       {
-        type: "box",
-        layout: "horizontal",
-        alignItems: "center",
-        id: 2,
-        contents: [
+        "type": "box",
+        "id": 1,
+        "contents": [
           {
-            type: "text",
-            text: "Joints(MET)",
-            flex: 1,
-            align: "center",
-            fontWeight: "bold",
-            fontSize: "18px",
-            id: 3,
-            textAlign: "center",
-          },
-          {
-            type: "box",
-            layout: "vertical",
-            flex: 4,
-            id: 4,
-            contents: [
-              {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                id: 5,
-                contents: [
-                  {
-                    type: "checkbox",
-                    bindingKey: "jointsSgCheckbox",
-                    id: 6,
-                  },
-                  {
-                    type: "text",
-                    text: "SG:Rt SG ER+EN",
-                    flexBasis: "auto",
-                    id: 7,
-                  },
-                ],
-              },
-              {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                alignItems: "center",
-                id: 8,
-                contents: [
-                  {
-                    type: "checkbox",
-                    bindingKey: "jointsDCheckbox",
-                    id: 9,
-                  },
-                  {
-                    type: "text",
-                    text: "D+: Tx group dysfn 1st rib on the left +",
-                    flexBasis: "auto",
-                    id: 10,
-                  },
-                  {
-                    type: "textField",
-                    value: "D+",
-                    flexBasis: "auto",
-                    width: "140px",
-                    bindingKey: "jointsD",
-                    id: 11,
-                  },
-                ],
-              },
-              {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                alignItems: "center",
-                id: 12,
-                contents: [
-                  {
-                    type: "checkbox",
-                    bindingKey: "jointsMtRibCheckbox",
-                    id: 13,
-                  },
-                  {
-                    type: "text",
-                    text: "MT/rib:",
-                    flexBasis: "auto",
-                    id: 14,
-                  },
-                  {
-                    type: "textField",
-                    value: "MT/rib",
-                    flexBasis: "auto",
-                    width: "140px",
-                    bindingKey: "jointsMtRib",
-                    id: 15,
-                  },
-                  {
-                    type: "text",
-                    text: "3D derot/thrust",
-                    flexBasis: "auto",
-                    id: 16,
-                  },
-                ],
-              },
-              {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                id: 17,
-                contents: [
-                  {
-                    type: "checkbox",
-                    bindingKey: "jointsLsjCheckbox",
-                    id: 18,
-                  },
-                  {
-                    type: "text",
-                    text: "LSJ: derotation",
-                    flexBasis: "auto",
-                    id: 19,
-                  },
-                ],
-              },
-              {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                alignItems: "center",
-                id: 20,
-                contents: [
-                  {
-                    type: "checkbox",
-                    bindingKey: "jointsPdCheckbox",
-                    id: 21,
-                  },
-                  {
-                    type: "text",
-                    text: "Pelvic Dysfn:",
-                    flexBasis: "auto",
-                    id: 22,
-                  },
-                  {
-                    type: "textField",
-                    value: "PelvicDysfn",
-                    flexBasis: "auto",
-                    width: "140px",
-                    bindingKey: "jointsPd",
-                    id: 23,
-                  },
-                ],
-              },
-            ],
-          },
+            "type": "text",
+            "id": 2,
+            "text": "脊椎側彎紀錄表",
+            "fontSize": "1.2em",
+            "textAlign": "center",
+            "fontWeight": "bold"
+          }
         ],
+        "marginBottom": "10px"
       },
       {
-        type: "separator",
-        marginAll: "16px",
-        id: 24,
-      },
-      {
-        type: "box",
-        layout: "horizontal",
-        alignItems: "center",
-        id: 25,
-        contents: [
+        "type": "table",
+        "id": 3,
+        "contents": [
           {
-            type: "text",
-            text: "Soft Tissue",
-            flex: 1,
-            align: "center",
-            fontWeight: "bold",
-            fontSize: "18px",
-            id: 26,
-            textAlign: "center",
-          },
-          {
-            type: "box",
-            layout: "vertical",
-            flex: 4,
-            id: 27,
-            contents: [
+            "type": "trow",
+            "id": 4,
+            "contents": [
               {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                id: 28,
-                contents: [
+                "type": "tcol",
+                "id": 5,
+                "contents": [
                   {
-                    type: "checkbox",
-                    bindingKey: "softTissueOpenUpLigCheckbox",
-                    id: 29,
-                  },
-                  {
-                    type: "text",
-                    text: "Lt T/L side: open up lig. & intercostrals",
-                    flexBasis: "auto",
-                    id: 30,
-                  },
+                    "type": "text",
+                    "id": 6,
+                    "text": "Type"
+                  }
                 ],
+                "width": "120px",
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
               },
               {
-                type: "box",
-                layout: "horizontal",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                id: 31,
-                contents: [
+                "type": "tcol",
+                "id": 7,
+                "contents": [
                   {
-                    type: "checkbox",
-                    bindingKey: "softTissueEoCheckbox",
-                    id: 32,
-                  },
-                  {
-                    type: "text",
-                    text: "Lt T/L side: open up EO/IO/QL",
-                    flexBasis: "auto",
-                    id: 33,
-                  },
+                    "type": "box",
+                    "id": 8,
+                    "contents": [
+                      {
+                        "type": "select",
+                        "id": 9,
+                        "flexGrow": 0,
+                        "flexShrink": 0,
+                        "dense": true,
+                        "bindingKey": "typeSelect",
+                        "options": [
+                          "Forward,A1/3CTL",
+                          "Reverse,A1/3CTL",
+                          "Forward,A2/3CH",
+                          "Reverse,A2/3CH",
+                          "Forward,A3/3CN",
+                          "Reverse,A3/3CN",
+                          "Forward,B1/4Ca",
+                          "Reverse,B1/4Ca",
+                          "Forward,B2/4Cb",
+                          "Reverse,B2/4Cb",
+                          "Forward,C1/3CL",
+                          "Reverse,C1/3CL",
+                          "Forward,C2/3CL",
+                          "Reverse,C2/3CL",
+                          "Forward,E1/4CL",
+                          "Reverse,E1/4CL",
+                          "Forward,E2/4CTL",
+                          "Reverse,E2/4CTL",
+                          "Forward,A1/3CTL,+D",
+                          "Reverse,A1/3CTL,+D",
+                          "Forward,A2/3CH,+D",
+                          "Reverse,A2/3CH,+D",
+                          "Forward,A3/3CN,+D",
+                          "Reverse,A3/3CN,+D",
+                          "Forward,B1/4Ca,+D",
+                          "Reverse,B1/4Ca,+D",
+                          "Forward,B2/4Cb,+D",
+                          "Reverse,B2/4Cb,+D",
+                          "Forward,C1/3CL,+D",
+                          "Reverse,C1/3CL,+D",
+                          "Forward,C2/3CL,+D",
+                          "Reverse,C2/3CL,+D",
+                          "Forward,E1/4CL,+D",
+                          "Reverse,E1/4CL,+D",
+                          "Forward,E2/4CTL,+D",
+                          "Reverse,E2/4CTL,+D",
+                          "not an idiopathic scoliosis",
+                          "No scoliosis",
+                          "could not happen",
+                          "No sructural scoliosis",
+                          "Forward,reverse A1/reverse 3CTL",
+                          "Reverse,reverse A1/reverse 3CTL",
+                          "Forward,reverse A1/reverse 3CTL,+D",
+                          "Reverse,reverse A1/reverse 3CTL,+D"
+                        ],
+                        "width": "200px"
+                      }
+                    ],
+                    "flexGrow": 0,
+                    "flexShrink": 0
+                  }
                 ],
-              },
-            ],
+                "width": "100%",
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              }
+            ]
           },
+          {
+            "type": "trow",
+            "id": 10,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 11,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 12,
+                    "text": "Rissor sign",
+                    "grow": 0,
+                    "shrink": 0
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              },
+              {
+                "type": "tcol",
+                "id": 13,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 14,
+                    "contents": [
+                      {
+                        "type": "textField",
+                        "id": 15,
+                        "grow": 0,
+                        "shrink": 1,
+                        "bindingKey": "standHeight"
+                      }
+                    ],
+                    "alignItems": "align-center",
+                    "marginTop": "",
+                    "marginBottom": ""
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 16,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 17,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 18,
+                    "text": "Cobb's angle",
+                    "grow": 0,
+                    "shrink": 0
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              },
+              {
+                "type": "tcol",
+                "id": 19,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 20,
+                    "contents": [
+                      {
+                        "type": "box",
+                        "id": 21,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 22,
+                            "text": "Upper T:",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": "",
+                            "fontWeight": "normal"
+                          },
+                          {
+                            "type": "box",
+                            "id": 23,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 24,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "cobbAngleUpperT1"
+                              },
+                              {
+                                "type": "textField",
+                                "id": 25,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "cobbAngleUpperT2"
+                              },
+                              {
+                                "type": "text",
+                                "id": 26,
+                                "text": "°",
+                                "grow": 0,
+                                "shrink": 0
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": ""
+                      },
+                      {
+                        "type": "box",
+                        "id": 27,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 28,
+                            "text": "Main T: ",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": ""
+                          },
+                          {
+                            "type": "box",
+                            "id": 29,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 30,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "cobbAngleMainT1"
+                              },
+                              {
+                                "type": "textField",
+                                "id": 31,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "cobbAngleMainT2"
+                              },
+                              {
+                                "type": "text",
+                                "id": 32,
+                                "text": "°",
+                                "grow": 0,
+                                "shrink": 0
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      },
+                      {
+                        "type": "box",
+                        "id": 33,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 34,
+                            "text": "L(TL): ",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": ""
+                          },
+                          {
+                            "type": "box",
+                            "id": 35,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 36,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "cobbAngleL1"
+                              },
+                              {
+                                "type": "textField",
+                                "id": 37,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "cobbAngleL2"
+                              },
+                              {
+                                "type": "text",
+                                "id": 38,
+                                "text": "°",
+                                "grow": 0,
+                                "shrink": 0
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      }
+                    ],
+                    "layout": "column"
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 39,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 40,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 41,
+                    "text": "ATR",
+                    "grow": 0,
+                    "shrink": 0
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              },
+              {
+                "type": "tcol",
+                "id": 42,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 43,
+                    "contents": [
+                      {
+                        "type": "box",
+                        "id": 44,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 45,
+                            "text": "Upper T:",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": "",
+                            "fontWeight": "normal"
+                          },
+                          {
+                            "type": "box",
+                            "id": 46,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 47,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "ATRUpperT"
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": ""
+                      },
+                      {
+                        "type": "box",
+                        "id": 48,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 49,
+                            "text": "Main T: ",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": ""
+                          },
+                          {
+                            "type": "box",
+                            "id": 50,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 51,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "ATRMainT"
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      },
+                      {
+                        "type": "box",
+                        "id": 52,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 53,
+                            "text": "L(TL): ",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": ""
+                          },
+                          {
+                            "type": "box",
+                            "id": 54,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 55,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "ATRL"
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      },
+                      {
+                        "type": "box",
+                        "id": 56,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 57,
+                            "text": "S:",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": "",
+                            "fontWeight": "normal"
+                          },
+                          {
+                            "type": "box",
+                            "id": 58,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 59,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "ATRS"
+                              }
+                            ]
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      }
+                    ],
+                    "layout": "column"
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 60,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 61,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 62,
+                    "text": "Flexibility",
+                    "grow": 0,
+                    "shrink": 0
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              },
+              {
+                "type": "tcol",
+                "id": 63,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 64,
+                    "contents": [
+                      {
+                        "type": "box",
+                        "id": 65,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 66,
+                            "text": "Upper T:",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": "",
+                            "fontWeight": "normal"
+                          },
+                          {
+                            "type": "box",
+                            "id": 67,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 68,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "flexibilityUpperT"
+                              },
+                              {
+                                "type": "text",
+                                "id": 69,
+                                "text": "%",
+                                "grow": 0,
+                                "shrink": 0,
+                                "width": "",
+                                "fontSize": "",
+                                "fontWeight": "normal"
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": ""
+                      },
+                      {
+                        "type": "box",
+                        "id": 70,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 71,
+                            "text": "Main T: ",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": "",
+                            "fontSize": ""
+                          },
+                          {
+                            "type": "box",
+                            "id": 72,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 73,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "flexibilityMainT"
+                              },
+                              {
+                                "type": "text",
+                                "id": 74,
+                                "text": "%",
+                                "grow": 0,
+                                "shrink": 0,
+                                "width": "",
+                                "fontSize": ""
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      },
+                      {
+                        "type": "box",
+                        "id": 75,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 76,
+                            "text": "L(TL): ",
+                            "grow": 0,
+                            "shrink": 0,
+                            "width": ""
+                          },
+                          {
+                            "type": "box",
+                            "id": 77,
+                            "contents": [
+                              {
+                                "type": "textField",
+                                "id": 78,
+                                "grow": 0,
+                                "shrink": 1,
+                                "bindingKey": "flexibilityLT"
+                              },
+                              {
+                                "type": "text",
+                                "id": 79,
+                                "text": "%",
+                                "grow": 0,
+                                "shrink": 0,
+                                "width": ""
+                              }
+                            ],
+                            "alignItems": "align-center",
+                            "marginTop": "",
+                            "marginBottom": ""
+                          }
+                        ],
+                        "layout": "",
+                        "marginTop": "20px"
+                      }
+                    ],
+                    "layout": "column"
+                  }
+                ],
+                "width": 0,
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 80,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 81,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 82,
+                    "contents": [
+                      {
+                        "type": "text",
+                        "id": 83,
+                        "text": "T1 vs CSL:",
+                        "grow": 0,
+                        "shrink": 0
+                      },
+                      {
+                        "type": "textField",
+                        "id": 84,
+                        "grow": 1,
+                        "shrink": 1,
+                        "bindingKey": "T1vsCSL"
+                      },
+                      {
+                        "type": "text",
+                        "id": 85,
+                        "text": "mm the CSL",
+                        "grow": 0,
+                        "shrink": 0
+                      }
+                    ],
+                    "alignItems": "align-center"
+                  }
+                ],
+                "colspan": "2",
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px",
+                "width": 0
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 86,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 87,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 88,
+                    "contents": [
+                      {
+                        "type": "textField",
+                        "id": 89,
+                        "grow": 1,
+                        "shrink": 1,
+                        "bindingKey": "shortLeg1"
+                      },
+                      {
+                        "type": "text",
+                        "id": 90,
+                        "text": "short leg",
+                        "grow": 1,
+                        "shrink": 0
+                      },
+                      {
+                        "type": "textField",
+                        "id": 91,
+                        "grow": 1,
+                        "shrink": 1,
+                        "bindingKey": "shortLeg2"
+                      },
+                      {
+                        "type": "text",
+                        "id": 92,
+                        "text": "mm",
+                        "grow": 1,
+                        "shrink": 0
+                      }
+                    ],
+                    "alignItems": "align-center",
+                    "flexGrow": 1
+                  }
+                ],
+                "colspan": "2",
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px",
+                "width": 0
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 93,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 94,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 95,
+                    "contents": [
+                      {
+                        "type": "text",
+                        "id": 96,
+                        "text": "Flat back:",
+                        "grow": 0,
+                        "shrink": 0
+                      },
+                      {
+                        "type": "radioGroup",
+                        "id": 97,
+                        "contents": [
+                          {
+                            "type": "radio",
+                            "id": 98,
+                            "label": "yes"
+                          },
+                          {
+                            "type": "radio",
+                            "id": 99,
+                            "label": "no"
+                          }
+                        ],
+                        "direction": "row",
+                        "marginLeft": "10px",
+                        "bindingKey": "flatBack",
+                        "dense": true
+                      }
+                    ],
+                    "alignItems": "align-center"
+                  }
+                ],
+                "colspan": "2",
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px",
+                "width": 0
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 100,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 101,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 102,
+                    "contents": [
+                      {
+                        "type": "text",
+                        "id": 103,
+                        "text": "Brace: ",
+                        "grow": 0,
+                        "shrink": 0
+                      },
+                      {
+                        "type": "radioGroup",
+                        "id": 104,
+                        "contents": [
+                          {
+                            "type": "radio",
+                            "id": 105,
+                            "label": "yes"
+                          },
+                          {
+                            "type": "radio",
+                            "id": 106,
+                            "label": "no"
+                          }
+                        ],
+                        "direction": "row",
+                        "marginLeft": "10px",
+                        "bindingKey": "brace",
+                        "dense": true
+                      }
+                    ],
+                    "alignItems": "align-center"
+                  }
+                ],
+                "colspan": "2",
+                "borderWidth": "1px",
+                "borderStyle": "solid",
+                "borderColor": "#ddd",
+                "paddingAll": "8px",
+                "width": 0
+              }
+            ]
+          }
         ],
-      },
+        "width": "100%",
+        "layout": "fixed"
+      }
     ],
+    "layout": "column"
   },
-  bindingData: {
-    jointsD: "",
-    jointsMtRib: "",
-    jointsPd: "",
-    jointsSgCheckbox: false,
-    jointsDCheckbox: false,
-    jointsMtRibCheckbox: false,
-    jointsLsjCheckbox: false,
-    jointsPdCheckbox: false,
-    softTissueOpenUpLigCheckbox: false,
-    softTissueEoCheckbox: false,
-  },
-};
+  bindingData:{
+    "typeSelect": null,
+    "standHeight": null,
+    "cobbAngleUpperT1": null,
+    "cobbAngleUpperT2": null,
+    "cobbAngleMainT1": null,
+    "cobbAngleMainT2": null,
+    "cobbAngleL1": null,
+    "cobbAngleL2": null,
+    "ATRUpperT": null,
+    "ATRMainT": null,
+    "ATRL": null,
+    "ATRS": null,
+    "flexibilityUpperT": null,
+    "flexibilityMainT": null,
+    "flexibilityLT": null,
+    "flexibility1": "",
+    "flexibility2": "",
+    "flexibility3": "",
+    "ATR1": null,
+    "ATR2": null,
+    "ATR3": null,
+    "ATR4": null,
+    "T1vsCSL": null,
+    "shortLeg1": null,
+    "shortLeg2": null,
+    "flatBack": null,
+    "brace": null
+  }  
+}
 
-const textFieldTemplate = {
-  name: "textField Demo",
-  template: {
-    type: "box",
-    layout: "horizontal",
-    id: 1,
-    contents: [
-      {
-        type: "text",
-        id: 3,
-        flexBasis: "auto",
-      },
-      {
-        type: "textField",
-        flexBasis: "auto",
-        width: "180px",
-        id: 2,
-      },
-    ],
-  },
-  bindingData: {},
-};
 
 const newElementTemplate = {
   name: "new element template",
@@ -3348,13 +4007,16 @@ const dynamicDisabledInputTemplate = {
   },
 };
 
+
+
 export const templates = {
-  tableTemplate,
-  diagnosisTemplate,
-  textFieldTemplate,
+  demo1,
+  demo2,
   newElementTemplate,
   dynamicDisabledInputTemplate,
+
+  
 };
 
-export const bindingData = tableTemplate.bindingData;
-export const template = tableTemplate.template;
+export const bindingData = demo1.bindingData;
+export const template = demo1.template;

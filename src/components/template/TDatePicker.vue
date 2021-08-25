@@ -1,5 +1,5 @@
 <template>
-  <v-flex :style="style">
+  <v-flex :style="style"  @click="(e)=>e.stopPropagation()">
     <v-menu
       v-model="isOpen"
       :close-on-content-click="false"

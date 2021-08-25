@@ -1,5 +1,5 @@
 <template>
-  <v-flex :style="style">
+  <v-flex :style="style" @click="(e)=>e.stopPropagation()">
     <v-autocomplete
       v-model="innerValue"
       v-bind="comboboxAttrs"

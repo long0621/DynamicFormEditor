@@ -188,7 +188,7 @@
         :picData="this.picData"
         @childMethod="parentMethod"
       ></TUploadAnnotatePic
-      >>
+      >
     </div>
   </div>
 </template>
@@ -262,9 +262,9 @@ export default {
         verticalText: "縱向數",
         verticalValue: "2",
         totalSizeWidthText: "總寬",
-        totalSizeWidthValue: "800",
+        totalSizeWidthValue: "300",
         totalSizeHeightText: "總高",
-        totalSizeHeightValue: "500",
+        totalSizeHeightValue: "300",
       },
       picData: {
         // currentPicIndex:1,

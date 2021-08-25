@@ -1,5 +1,5 @@
 <template>
-  <v-flex :style="style" >
+  <v-flex :style="style" @click="(e)=>e.stopPropagation()">
     <v-text-field
       v-model="innerValue"
       v-bind="attrs"
@@ -7,14 +7,12 @@
       hide-details
       :label="label"
       :class="{'centered-input': textCenter}"
-      @click="elementFocus"
     ></v-text-field>
   </v-flex>
 </template>
 
 <script>
 import disabledMixin from "./disabledMixin.js";
-
 
 export default {
   name: "TTextField",
@@ -86,9 +84,9 @@ export default {
     this.innerValue = this.value;
   },
   methods:{
-    elementFocus(){
-      this.$store.commit("formFocusElement",this.data.bindingKey)
-    }
+    // elementFocus(){
+    //   this.$store.commit("formFocusElement",this.data)
+    // }
   },
   // computed: {
   //   ...mapState(['formElementFocus']),

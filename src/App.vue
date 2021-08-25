@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <v-app-bar app outlined flat>
-      <!-- 標題 -->
       <v-toolbar-title
         class="text-uppercase text-h5 font-weight-bold grey--text text--darken-1"
       >
@@ -10,7 +9,6 @@
 
       <v-spacer></v-spacer>
 
-      <!-- 收闔/展開TForm版面 -->
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -99,7 +97,6 @@
       {{ notificationMessage }}
     </v-snackbar>
 
-    <!-- 控制navbar跳出視窗 -->
     <showcase-dialog v-model="isShowcaseDialogOpen"></showcase-dialog>
     <data-json-dialog v-model="isDataJsonDialogOpen"></data-json-dialog>
     <form-json-dialog v-model="isFormJsonDialogOpen"></form-json-dialog>

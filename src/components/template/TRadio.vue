@@ -1,5 +1,5 @@
 <template>
-  <v-radio v-bind="radioAttrs" :style="style"></v-radio>
+  <v-radio v-bind="radioAttrs" :style="style" @click="(e)=>e.stopPropagation()"></v-radio>
 </template>
 
 <script>

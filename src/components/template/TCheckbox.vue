@@ -67,7 +67,7 @@ export default {
     };
 
     return (
-      <v-flex style={style}>
+      <v-flex style={style} onClick={ (e) => e.stopPropagation()}>
         <v-layout align-center>
           <v-checkbox
             v-model={this.innerValue}

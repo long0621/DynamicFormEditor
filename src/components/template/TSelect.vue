@@ -63,7 +63,7 @@ export default {
     };
 
     return (
-      <v-flex style={style}>
+      <v-flex style={style} onClick={ (e) => e.stopPropagation()}>
         <v-select v-model={this.innerValue} props={props}>
           {this.$slots.default}
         </v-select>

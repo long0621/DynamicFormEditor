@@ -21,6 +21,16 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['Group']"
+      input-class="white"
+      type="textField"
+      label="Group"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['layout']"
       input-class="white"
       type="select"

@@ -1,5 +1,5 @@
 <template>
-  <v-chip v-bind="attrs">{{ data.value }}</v-chip>
+  <v-chip v-bind="attrs"  @click="(e)=>e.stopPropagation()">{{ data.value }}</v-chip>
 </template>
 
 <script>

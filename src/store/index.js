@@ -30,9 +30,8 @@ export default new Vuex.Store({
   state: {
     template: defaultTemplate,
     bindingData: defaultBindingData,
-    formElementFocus:{
-      bindingKey:null
-    }
+    formElementFocus:{},
+    focusMode:"treeview"
   },
   mutations: {
     template(state, template) {
@@ -41,8 +40,11 @@ export default new Vuex.Store({
     bindingData(state, bindingData) {
       state.bindingData = bindingData;
     },
-    formFocusElement(state,bindingKey){
-      state.formElementFocus.bindingKey = bindingKey;
+    formFocusElement(state,element){
+      state.formElementFocus = element;
+    },
+    changeFocusMode(state,mode){
+      state.focusMode = mode;
     }
   },
   actions: {},

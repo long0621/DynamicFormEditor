@@ -1,6 +1,16 @@
 <template>
   <v-container>
     <element-setting-input-box
+      v-model="element['Group']"
+      input-class="white"
+      type="textField"
+      label="Group"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['label']"
       input-class="white"
       label="label"

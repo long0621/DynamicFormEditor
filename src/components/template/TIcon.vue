@@ -28,7 +28,7 @@ export default {
       display: "inline-block",
     };
 
-    return <span style={style}>{this.$slots.default}</span>;
+    return <span style={style} onClick={ (e) => e.stopPropagation()}>{this.$slots.default}</span>;
   },
 };
 </script>

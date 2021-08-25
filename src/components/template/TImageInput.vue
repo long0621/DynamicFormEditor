@@ -2,6 +2,7 @@
   <v-file-input
     accept="image/*"
     label="File input"
+    @click="(e)=>e.stopPropagation()"
   ></v-file-input>
 </template>
 

@@ -27,7 +27,7 @@ export default {
       backgroundColor: data.backgroundColor,
     };
 
-    return <v-divider style={style}></v-divider>;
+    return <v-divider style={style} onClick={ (e) => e.stopPropagation()}></v-divider>;
   },
 };
 </script>

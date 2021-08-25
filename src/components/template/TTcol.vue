@@ -33,7 +33,7 @@ export default {
     };
 
     return (
-      <td colspan={data.colspan} rowspan={data.rowspan} style={style}>
+      <td colspan={data.colspan} rowspan={data.rowspan} style={style} onClick={ (e) => e.stopPropagation()} >
         {this.$slots.default}
       </td>
     );

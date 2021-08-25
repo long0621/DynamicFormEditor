@@ -1,14 +1,14 @@
 <template>
   <!-- <v-row justify="center"> -->
-    <div style="width: 100%;">
-    <v-expansion-panels >
-      <v-expansion-panel>
-        <v-expansion-panel-header>{{headerAttrs.label}}</v-expansion-panel-header>
-        <v-expansion-panel-content style="padding-top:10px;">
-          <slot></slot>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
+    <div style="width: 100%;" @click="(e)=>e.stopPropagation()">
+      <v-expansion-panels >
+        <v-expansion-panel>
+          <v-expansion-panel-header>{{headerAttrs.label}}</v-expansion-panel-header>
+          <v-expansion-panel-content style="padding-top:10px;">
+            <slot></slot>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </div>
   <!-- </v-row> -->
 </template>

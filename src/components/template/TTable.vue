@@ -20,7 +20,7 @@ export default {
     };
 
     return (
-      <table style={style}>
+      <table style={style} onClick={ (e) => e.stopPropagation()}>
         <tbody>{this.$slots.default}</tbody>
       </table>
     );

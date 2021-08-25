@@ -64,6 +64,12 @@ export default {
       type: [Boolean, undefined],
       default: undefined,
     },
+    onChange: {
+      type: Function,
+      default:function(){
+        return null
+      }
+    },
   },
 
   methods: {
@@ -83,6 +89,9 @@ export default {
             binding-data={this.bindingData}
             form-disabled={this.disabled}
             id={`form-element-${element.id}`}
+            //onClick={ (e) => e.stopPropagation()} 
+            group={element.Group}
+            nativeOnClick={ (e) => this.elementFocus(element,e)}
           >
             {element.contents?.map((el) => this.renderElement(el))}
           </Component>
@@ -95,11 +104,19 @@ export default {
           form-disabled={this.disabled}
           binding-data={this.bindingData}
           id={`form-element-${element.id}`}
+          //onClick={ (e) => e.stopPropagation()} 
+          group={element.Group}
+          nativeOnClick={ () => this.elementFocus(element)}
         >
           {element.contents?.map((el) => this.renderElement(el))}
         </Component>
       );
     },
+
+    elementFocus(element){
+      this.$store.commit("changeFocusMode","tform");
+      this.$store.commit("formFocusElement",element);
+    }
   },
 
   render() {

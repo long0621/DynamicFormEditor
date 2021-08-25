@@ -1,5 +1,5 @@
 <template>
-  <v-chip-group v-model="innerValue" v-bind="attrs">
+  <v-chip-group v-model="innerValue" v-bind="attrs" @click="(e)=>e.stopPropagation()">
     <slot></slot>
   </v-chip-group>
 </template>

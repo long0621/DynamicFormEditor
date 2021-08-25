@@ -1,5 +1,5 @@
 <template>
-  <v-flex :style="style">
+  <v-flex :style="style" @click="(e)=>e.stopPropagation()">
     <v-radio-group v-model="innerValue" v-bind="radioGroupAttrs" class="mt-0">
       <slot></slot>
     </v-radio-group>

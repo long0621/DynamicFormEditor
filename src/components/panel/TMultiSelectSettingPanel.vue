@@ -20,6 +20,16 @@
       hide-details
     ></element-setting-input-box>
 
+    <element-setting-input-box
+      v-model="element['Group']"
+      input-class="white"
+      type="textField"
+      label="Group"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
     <binding-key-input-box
       :key="element.id"
       :element="element"

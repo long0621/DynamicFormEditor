@@ -69,7 +69,7 @@ export default {
   },
   methods:{
     elementFocus(){
-      this.$store.commit("formFocusElement",this.data.bindingKey)
+      this.$store.commit("formFocusElement",this.data)
     }
   }
 };
