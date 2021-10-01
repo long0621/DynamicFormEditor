@@ -81,6 +81,14 @@
       </v-btn-toggle>
 
       <v-btn-toggle class="mr-1" background-color="grey" dark>
+        <toolbar-btn @click="insertNodeActive"  >
+          <v-badge :value="insertBageShow" :content="insertBageContent"  color="error"  >
+						<v-icon small>mdi-table-column-plus-after</v-icon>
+					</v-badge>
+        </toolbar-btn>
+      </v-btn-toggle>
+
+      <v-btn-toggle class="mr-1" background-color="grey" dark>
         <toolbar-btn :disabled="(historyTemplateData.length ===0)||(currentTemplateIdx ===0)" @click="onShiftStep(-1)">
           <v-icon small>mdi-undo</v-icon>
         </toolbar-btn>
@@ -213,7 +221,7 @@ export default {
       if (!this.selectedNode?.type) return [];
       return childElementsMap[this.selectedNode.type] || [];
     },
-    ...mapState(["formElementFocus","focusMode"])
+    ...mapState(["formElementFocus"])
   },
 
   data() {
@@ -230,7 +238,15 @@ export default {
 			currentTemplateIdx: -1,
 			historyTemplateData: [],
       openList:[],
-      treeviewFocus:[]
+      treeviewFocus:[],
+      //中間插入模式
+      eabledInsertNode:false,
+      insertBageShow:false,
+      insertBageContent:[0],
+      insertNodeFirst:{},
+      insertNodeSecond:{},
+      parentNode:{},
+      endChildIndex:null,
     };
   },
   created(){
@@ -261,6 +277,12 @@ export default {
       this.treeviewFocus=[focusItem];
       this.openList=result;
     },
+    selectedNode(){
+      //點擊時判斷是否是在執行插入節點
+      if (this.eabledInsertNode) {
+        this.insertNode();
+      }
+    }
   },
 
   methods: {
@@ -425,14 +447,57 @@ export default {
         this.replaceNodeId(this.resetBindingKey(newNode));
       }
 
-      if ("contents" in this.selectedNode) {
-        this.selectedNode.contents.push(newNode);
-      } else {
-        this.$set(this.selectedNode, "contents", [newNode]);
+      //貼上時根據eabledInsertNode來決定是否為中間插入
+      if (this.eabledInsertNode && JSON.stringify(this.insertNodeSecond) !== "{}") {
+        this.insertDataInMiddle(newNode);
+      }
+      else{
+        //插入最後排
+        if ("contents" in this.selectedNode) {
+          this.selectedNode.contents.push(newNode);
+        } else {
+          this.$set(this.selectedNode, "contents", [newNode]);
+        }
       }
 
       this.storeTemplateDataToHistory();
       this.firstPasteAfterCut = false;
+    },
+    insertNodeActive(){
+      this.eabledInsertNode = !this.eabledInsertNode;
+      if (this.eabledInsertNode == true) {
+        this.insertBageShow=true;
+      }
+      else{
+        //reset insert mode
+        this.insertBageShow = false;
+        this.insertBageContent=[0];
+        this.insertNodeFirst={};
+        this.insertNodeSecond={};
+        this.parentNode={};
+        this.endChildIndex=null;
+      }
+    },
+    insertNode(){
+      if (JSON.stringify(this.insertNodeFirst) == "{}"){
+          this.insertNodeFirst = this.selectedNode;
+          this.insertBageContent =[1];
+          return
+        }
+      else if(JSON.stringify(this.insertNodeSecond) == "{}"){
+        this.insertBageContent =[2];
+        this.insertNodeSecond = this.selectedNode;
+        //長度為2說明插入條件已滿足，找出父元素及指定的結尾索引
+        for (let key in this.$refs.treeview.nodes) {
+          const node = this.$refs.treeview.nodes[key];
+          if (node.item == this.selectedNode){
+            //找到當前節點
+            const parentIndex = node.parent;
+            this.parentNode = this.$refs.treeview.nodes[parentIndex].item;
+            this.endChildIndex = this.parentNode.contents.indexOf(node.item);
+          } 
+        }
+      }
     },
     deleteBindingData(node = this.selectedNode) {
       if ("bindingKey" in node && node["bindingKey"] in this.bindingData) {
@@ -546,6 +611,17 @@ export default {
         }
       }
     },
+    insertDataInMiddle(newNode){
+      this.parentNode.contents.splice(this.endChildIndex,0,newNode);
+
+      //reset insert mode
+      this.insertBageShow = false;
+      this.insertBageContent=[0];
+      this.insertNodeFirst={};
+      this.insertNodeSecond={};
+      this.parentNode={};
+      this.endChildIndex=null;
+    }
   },
 };
 </script>
