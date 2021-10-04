@@ -450,6 +450,7 @@ export default {
       //貼上時根據eabledInsertNode來決定是否為中間插入
       if (this.eabledInsertNode && JSON.stringify(this.insertNodeSecond) !== "{}") {
         this.insertDataInMiddle(newNode);
+        this.eabledInsertNode = false;
       }
       else{
         //插入最後排
